@@ -20,4 +20,12 @@ public class Person{
     public void setTickets(int tickets) {
         this.tickets = tickets;
     }
+    public  int getTickets(){
+        return tickets;
+    }
+    public void toString (String name, String surname, int tickets){
+        this.name = name;
+        this.surname = surname;
+        this.tickets = tickets;
+    }
 }

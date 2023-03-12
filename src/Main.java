@@ -7,16 +7,17 @@ public class Main {
     public static void main(String[] args) {
         Deque<Person> queue = new ArrayDeque<>(generateClients());
         while (!queue.isEmpty()){
-            for (int a = 0; a < queue.size(); a++) {
-                System.out.println(queue.peek() + " прокатился на атракционе");
-                // if( человек имеет 0 билетов){
-                //queue.poll()
-                //}else {
-                // поставь в конец очереди}
+            for (Person a : queue) {
+                System.out.println(a + " прокатился на атракционе");
+                if(a.getTickets() == 0){
+                    a.poll();
+                } else {
+                    a.poll();
+                    a.offer();
+                    return a.getTickets()--;
+                }
             }
-
         }
-
     }
 
     public static List<Person> generateClients() {
